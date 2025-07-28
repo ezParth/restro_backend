@@ -143,5 +143,5 @@ func UpdateMenu() gin.HandlerFunc {
 }
 
 func inTimeSpan(start, end, current time.Time) bool {
-	return true
+	return start.After(time.Now()) && end.After(start)
 }
